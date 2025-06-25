@@ -10,7 +10,7 @@ const Apod = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/nasa/apod')
+    axios.get('https://nasa-explorer-cmp4.onrender.com/api/nasa/apod')
       .then(response => {
         setApod(response.data);
         setLoading(false);
