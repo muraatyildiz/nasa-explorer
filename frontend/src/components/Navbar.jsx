@@ -1,25 +1,28 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import React from "react";
+import { AppBar, Toolbar, Typography, Button, Box ,CssBaseline } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <AppBar position="static" color="primary">
-      <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          NASA Explorer
-        </Typography>
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar color="primary" component="nav">
+        <Toolbar>
+          <Typography textAlign="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            NASA Explorer
+          </Typography>
 
-        <Box sx={{ display: 'flex', gap: 2 }}>
-          <Button color="inherit" component={RouterLink} to="/">
-            APOD
-          </Button>
-          <Button color="inherit" component={RouterLink} to="/mars">
-            Mars Photos
-          </Button>
-        </Box>
-      </Toolbar>
-    </AppBar>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Button color="inherit" component={RouterLink} to="/">
+              APOD
+            </Button>
+            <Button color="inherit" component={RouterLink} to="/mars">
+              Mars Photos
+            </Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 
