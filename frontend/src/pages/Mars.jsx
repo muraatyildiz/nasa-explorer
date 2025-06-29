@@ -23,7 +23,7 @@ const Mars = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:3001/api/nasa/mars-photos?date=${formattedDate}`
+        `https://nasa-explorer-cmp4.onrender.com/api/nasa/mars-photos?date=${formattedDate}`
       );
       setPhotos(response.data.photos);
     } catch (error) {
