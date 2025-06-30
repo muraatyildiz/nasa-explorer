@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import {
+  Box,
   Container,
   Typography,
   Grid,
@@ -10,51 +10,51 @@ import {
   CircularProgress,
   TextField,
 } from "@mui/material";
-import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { format } from "date-fns";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMarsPhotos, setDate } from "../store/slices/marsSlice";
 
 const Mars = () => {
-  const [date, setDate] = useState(new Date("2015-06-03"));
-  const [photos, setPhotos] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const fetchPhotos = async (formattedDate) => {
-    setLoading(true);
-    try {
-      const response = await axios.get(
-        `https://nasa-explorer-cmp4.onrender.com/api/nasa/mars-photos?date=${formattedDate}`
-      );
-      setPhotos(response.data.photos);
-    } catch (error) {
-      console.error("Error fetching Mars photos:", error);
-      setPhotos([]);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const dispatch = useDispatch();
+  const { date, photos, loading } = useSelector((state) => state.mars);
 
   useEffect(() => {
-    fetchPhotos(format(date, "yyyy-MM-dd"));
-  }, [date]);
+    dispatch(fetchMarsPhotos(date));
+  }, [date, dispatch]);
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 6 }}>
-      <Typography variant="h4" fontWeight={600} gutterBottom>
-        Mars Rover Photos
-      </Typography>
-
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DatePicker
-          label="Select Date"
-          value={date}
-          onChange={(newValue) => setDate(newValue)}
-          renderInput={(params) => <TextField {...params} sx={{ mb: 4 }} />}
-        />
-      </LocalizationProvider>
+    <Container maxWidth="md" sx={{ mt: 8, mb: 8 }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 3,
+          flexDirection: { xs: "column", sm: "row" },
+          gap: 2,
+        }}
+      >
+        <Typography variant="h4" fontWeight={600}>
+          Mars Rover Photos
+        </Typography>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <DatePicker
+            label="Select Date"
+            value={new Date(date)}
+            onChange={(newDate) => {
+              if (newDate) dispatch(setDate(newDate));
+            }}
+            maxDate={new Date()}
+            slotProps={{ textField: { size: "small" } }}
+          />
+        </LocalizationProvider>
+      </Box>
 
       {loading ? (
-        <CircularProgress />
+        <Box textAlign="center" mt={8}>
+          <CircularProgress color="primary" />
+        </Box>
       ) : (
         <Grid container spacing={3}>
           {photos.map((photo) => (

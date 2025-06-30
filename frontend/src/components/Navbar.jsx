@@ -1,18 +1,39 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Box ,CssBaseline } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  CssBaseline,
+} from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar color="primary" component="nav">
+      <AppBar component="nav">
         <Toolbar>
-          <Typography textAlign="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            color="primary"
+            textAlign="left"
+            variant="h6"
+            component={RouterLink}
+            to="/"
+            sx={{
+              flexGrow: 1,
+              textDecoration: "none",
+              "&:hover": {
+                color: "inherit",
+                textDecoration: "none",
+              },
+            }}
+          >
             NASA Explorer
           </Typography>
 
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button color="inherit" component={RouterLink} to="/">
               APOD
             </Button>
