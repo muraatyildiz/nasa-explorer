@@ -7,9 +7,11 @@ const NASA_API_KEY = process.env.NASA_API_KEY;
 
 router.get('/apod', async (req, res) => {
   try {
+     const { date } = req.query;
     const response = await axios.get('https://api.nasa.gov/planetary/apod', {
       params: {
         api_key: NASA_API_KEY,
+         ...(date && { date })
       },
     });
 
