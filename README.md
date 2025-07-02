@@ -61,42 +61,46 @@ The app uses **OpenAI's GPT-4 Vision** API to extract mood and visual aesthetics
 ---
 ## Folder Structure
 
-.
-├── nasa-explorer/
-├── ├── backend/
-├── │   ├── controllers/
-├── │   │   ├── aiController.js
-├── │   │   └── nasaController.js
-├── │   ├── middlewares/
-├── │   │   └── errorHandler.js
-├── │   ├── routes/
-├── │   │   ├── ai.js
-├── │   │   └── nasa.js
-├── │   ├── services/
-├── │   │   ├── aiService.js
-├── │   │   └── nasaService.js
-├── │   ├── utils/
-├── │   │   └── extractJson.js
-├── │   ├── app.js
-├── │   ├── server.js
-├── │   └── .env
-├── ├── frontend/
-├── │   └── src/
-├── │       ├── components/
-├── │       │   ├── Navbar.jsx
-├── │       │   └── Starfield.jsx
-├── │       ├── pages/
-├── │       │   ├── Apod.jsx
-├── │       │   └── Mars.jsx
-├── │       ├── store/
-├── │       │   ├── slices/
-├── │       │   │   ├── apodSlice.js
-├── │       │   │   └── marsSlice.js
-├── │       │   └── index.js
-├── │       ├── App.jsx
-├── │       └── main.jsx
-├── ├── README.md
-└── └── .gitignore
+nasa-explorer/
+├── backend/
+│   ├── controllers/
+│   │   ├── aiController.js
+│   │   └── nasaController.js
+│   ├── services/
+│   │   ├── aiService.js
+│   │   └── nasaService.js
+│   ├── routes/
+│   │   ├── ai.js
+│   │   └── nasa.js
+│   ├── middlewares/
+│   │   └── errorHandler.js
+│   ├── utils/
+│   │   └── extractJson.js
+│   ├── app.js
+│   ├── server.js
+│   └── .env
+│
+├── frontend/
+│   └── src/
+│       ├── components/
+│       │   ├── Navbar.jsx
+│       │   └── Starfield.jsx
+│       ├── pages/
+│       │   ├── Apod.jsx
+│       │   └── Mars.jsx
+│       ├── store/
+│       │   ├── slices/
+│       │   │   ├── apodSlice.js
+│       │   │   └── marsSlice.js
+│       │   └── index.js
+│       ├── App.jsx
+│       ├── main.jsx
+│       └── index.css
+│
+├── README.md
+├── package.json
+└── .gitignore
+
 
 
 ---
