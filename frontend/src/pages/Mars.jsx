@@ -14,6 +14,8 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMarsPhotos, setDate } from "../store/slices/marsSlice";
+import MarsPhotoCard from "../components/MarsPhotoCard";
+
 
 const Mars = () => {
   const dispatch = useDispatch();
@@ -59,19 +61,7 @@ const Mars = () => {
         <Grid container spacing={3}>
           {photos.map((photo) => (
             <Grid item xs={12} sm={6} md={4} key={photo.id}>
-              <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
-                <CardMedia
-                  component="img"
-                  image={photo.img_src}
-                  alt={photo.camera.full_name}
-                  sx={{ objectFit: "cover", height: 250 }}
-                />
-                <CardContent>
-                  <Typography variant="body2">
-                    {photo.rover.name} – {photo.camera.full_name}
-                  </Typography>
-                </CardContent>
-              </Card>
+              <MarsPhotoCard photo={photo} />
             </Grid>
           ))}
           {photos.length === 0 && (
