@@ -6,11 +6,11 @@ export const fetchApodAndAiAnalysis = createAsyncThunk(
   async (date = null) => {
     const formattedDate = date ? date.toISOString().split("T")[0] : null;
 
-    const apodRes = await axios.get("http://localhost:3001/api/nasa/apod", {
+    const apodRes = await axios.get("https://nasa-explorer-cmp4.onrender.com/api/nasa/apod", {
       params: formattedDate ? { date: formattedDate } : {},
     });
 
-    const aiAnalysisRes = await axios.post("http://localhost:3001/api/ai/analysis", {
+    const aiAnalysisRes = await axios.post("https://nasa-explorer-cmp4.onrender.com/api/ai/analysis", {
       imageUrl: apodRes.data.url,
       title: apodRes.data.title,
       explanation: apodRes.data.explanation,

@@ -6,7 +6,7 @@ export const fetchMarsPhotos = createAsyncThunk(
   'mars/fetchPhotos',
   async (date) => {
     const formattedDate = format(new Date(date), 'yyyy-MM-dd');
-    const res = await axios.get(`http://localhost:3001/api/nasa/mars-photos?date=${formattedDate}`);
+    const res = await axios.get(`https://nasa-explorer-cmp4.onrender.com/api/nasa/mars-photos?date=${formattedDate}`);
     return { date: formattedDate, photos: res.data.photos };
   }
 );
