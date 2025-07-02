@@ -33,7 +33,7 @@ const Navbar = () => {
             NASA Explorer
           </Typography>
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { sm: "block" } }}>
             <Button color="inherit" component={RouterLink} to="/">
               APOD
             </Button>
