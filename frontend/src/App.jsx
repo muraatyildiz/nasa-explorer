@@ -6,24 +6,24 @@ import Apod from "./pages/Apod";
 import Mars from "./pages/Mars";
 import Starfield from "./components/Starfield";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchApodAndMood } from "./store/slices/apodSlice";
+import { fetchApodAndAiAnalysis} from "./store/slices/apodSlice";
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(null);
   const dispatch = useDispatch();
 
-  const { apod, aiMood, loading } = useSelector((state) => state.apod);
+  const { apod, aiAnalysis, loading } = useSelector((state) => state.apod);
 
   useEffect(() => {
-    dispatch(fetchApodAndMood(selectedDate));
+    dispatch(fetchApodAndAiAnalysis(selectedDate));
   }, [selectedDate, dispatch]);
 
   const fallbackColors = ["#ffffff", "#aaaaaa", "#888888"];
 
-  const safeColors = aiMood?.colors?.some(
+  const safeColors = aiAnalysis?.colors?.some(
     (color) => color.toLowerCase() !== "#000000"
   )
-    ? aiMood.colors
+    ? aiAnalysis.colors
     : fallbackColors;
 
   return (

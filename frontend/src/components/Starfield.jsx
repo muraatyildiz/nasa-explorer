@@ -3,8 +3,6 @@ import { useEffect, useRef } from 'react';
 
 export default function Starfield({ starColors = ['#ffffff'] }) {
   const canvasRef = useRef();
-console.log('🌟 Starfield using colors:', starColors);
- 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
