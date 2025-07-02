@@ -60,6 +60,7 @@ The app uses **OpenAI's GPT-4 Vision** API to extract mood and visual aesthetics
 
 ---
 ## Folder Structure
+
 nasa-explorer/
 ├── backend/
 │   ├── controllers/
@@ -78,7 +79,6 @@ nasa-explorer/
 │   ├── app.js
 │   ├── server.js
 │   └── .env
-│
 ├── frontend/
 │   └── src/
 │       ├── components/
@@ -93,9 +93,10 @@ nasa-explorer/
 │       │   │   └── marsSlice.js
 │       │   └── index.js
 │       ├── App.jsx
-│       ├── main.jsx
+│       └── main.jsx
 ├── README.md
 └── .gitignore
+
 
 ---
 
