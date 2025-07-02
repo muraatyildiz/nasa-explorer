@@ -58,33 +58,33 @@ The app uses **OpenAI's GPT-4 Vision** API to extract mood and visual aesthetics
 - OpenAI SDK
 - Axios 
 
----
-## Folder Structure
 
+## Folder Structure
+<pre> 
 nasa-explorer/
 ├── backend/
 │   ├── controllers/
 │   │   ├── aiController.js
 │   │   └── nasaController.js
-│   ├── services/
-│   │   ├── aiService.js
-│   │   └── nasaService.js
+│   ├── middlewares/
+│   │   └── errorHandler.js
 │   ├── routes/
 │   │   ├── ai.js
 │   │   └── nasa.js
-│   ├── middlewares/
-│   │   └── errorHandler.js
+│   ├── services/
+│   │   ├── aiService.js
+│   │   └── nasaService.js
 │   ├── utils/
 │   │   └── extractJson.js
 │   ├── app.js
 │   ├── server.js
 │   └── .env
-│
 ├── frontend/
 │   └── src/
 │       ├── components/
 │       │   ├── Navbar.jsx
-│       │   └── Starfield.jsx
+│       │   ├── Starfield.jsx
+│       │   └── MarsPhotoCard.jsx
 │       ├── pages/
 │       │   ├── Apod.jsx
 │       │   └── Mars.jsx
@@ -94,16 +94,11 @@ nasa-explorer/
 │       │   │   └── marsSlice.js
 │       │   └── index.js
 │       ├── App.jsx
-│       ├── main.jsx
-│       └── index.css
-│
+│       └── main.jsx
 ├── README.md
-├── package.json
 └── .gitignore
 
-
-
----
+</pre>
 
 ##  Setup Instructions
 

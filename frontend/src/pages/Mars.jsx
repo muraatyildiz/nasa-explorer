@@ -4,18 +4,12 @@ import {
   Container,
   Typography,
   Grid,
-  Card,
-  CardMedia,
-  CardContent,
   CircularProgress,
-  TextField,
 } from "@mui/material";
-import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import DateSelector from "../components/DateSelector";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMarsPhotos, setDate } from "../store/slices/marsSlice";
 import MarsPhotoCard from "../components/MarsPhotosCard";
-
 
 const Mars = () => {
   const dispatch = useDispatch();
@@ -40,17 +34,11 @@ const Mars = () => {
         <Typography variant="h4" fontWeight={600}>
           Mars Rover Photos
         </Typography>
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <DatePicker
-            label="Select Date"
-            value={new Date(date)}
-            onChange={(newDate) => {
-              if (newDate) dispatch(setDate(newDate));
-            }}
-            maxDate={new Date()}
-            slotProps={{ textField: { size: "small" } }}
-          />
-        </LocalizationProvider>
+        <DateSelector
+          label="Select Date"
+          value={new Date(date)}
+          onChange={(newDate) => dispatch(setDate(newDate))}
+        />
       </Box>
 
       {loading ? (
