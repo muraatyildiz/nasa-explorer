@@ -5,7 +5,7 @@ A full-stack space-themed web application that lets users explore:
 -  NASA's Astronomy Picture of the Day (APOD)
 -  Curiosity Rover’s Mars photos
 -  AI-generated based on APOD content
-**Live Demo:** [nasa-explorer-chi.vercel.app](https://nasa-explorer-chi.vercel.app)
+- **Live Demo:** [nasa-explorer-chi.vercel.app](https://nasa-explorer-chi.vercel.app)
 
 ---
 
@@ -61,41 +61,42 @@ The app uses **OpenAI's GPT-4 Vision** API to extract mood and visual aesthetics
 ---
 ## Folder Structure
 
-nasa-explorer/
-├── backend/
-│   ├── controllers/
-│   │   ├── aiController.js
-│   │   └── nasaController.js
-│   ├── middlewares/
-│   │   └── errorHandler.js
-│   ├── routes/
-│   │   ├── ai.js
-│   │   └── nasa.js
-│   ├── services/
-│   │   ├── aiService.js
-│   │   └── nasaService.js
-│   ├── utils/
-│   │   └── extractJson.js
-│   ├── app.js
-│   ├── server.js
-│   └── .env
-├── frontend/
-│   └── src/
-│       ├── components/
-│       │   ├── Navbar.jsx
-│       │   └── Starfield.jsx
-│       ├── pages/
-│       │   ├── Apod.jsx
-│       │   └── Mars.jsx
-│       ├── store/
-│       │   ├── slices/
-│       │   │   ├── apodSlice.js
-│       │   │   └── marsSlice.js
-│       │   └── index.js
-│       ├── App.jsx
-│       └── main.jsx
-├── README.md
-└── .gitignore
+.
+├── nasa-explorer/
+├── ├── backend/
+├── │   ├── controllers/
+├── │   │   ├── aiController.js
+├── │   │   └── nasaController.js
+├── │   ├── middlewares/
+├── │   │   └── errorHandler.js
+├── │   ├── routes/
+├── │   │   ├── ai.js
+├── │   │   └── nasa.js
+├── │   ├── services/
+├── │   │   ├── aiService.js
+├── │   │   └── nasaService.js
+├── │   ├── utils/
+├── │   │   └── extractJson.js
+├── │   ├── app.js
+├── │   ├── server.js
+├── │   └── .env
+├── ├── frontend/
+├── │   └── src/
+├── │       ├── components/
+├── │       │   ├── Navbar.jsx
+├── │       │   └── Starfield.jsx
+├── │       ├── pages/
+├── │       │   ├── Apod.jsx
+├── │       │   └── Mars.jsx
+├── │       ├── store/
+├── │       │   ├── slices/
+├── │       │   │   ├── apodSlice.js
+├── │       │   │   └── marsSlice.js
+├── │       │   └── index.js
+├── │       ├── App.jsx
+├── │       └── main.jsx
+├── ├── README.md
+└── └── .gitignore
 
 
 ---
