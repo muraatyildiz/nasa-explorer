@@ -14,7 +14,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMarsPhotos, setDate } from "../store/slices/marsSlice";
-import MarsPhotoCard from "../components/MarsPhotoCard";
+import MarsPhotoCard from "../components/MarsPhotosCard";
 
 
 const Mars = () => {
