@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Apod from "./pages/Apod";
 import Mars from "./pages/Mars";
+import ErrorPage from "./pages/ErrorPage";
 import Starfield from "./components/Starfield";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchApodAndAiAnalysis} from "./store/slices/apodSlice";
@@ -44,6 +45,7 @@ function App() {
             }
           />
           <Route path="/mars" element={<Mars />} />
+           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
     </Router>
